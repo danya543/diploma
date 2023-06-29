@@ -1,0 +1,31 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+
+  svg {
+    position: absolute;
+    top: 40px;
+    left: 60px;
+  }
+
+  main {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    section {
+      background-color: var(--pixema-sign-backgroung-color);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+      border-radius: 5px;
+    }
+  }
+}

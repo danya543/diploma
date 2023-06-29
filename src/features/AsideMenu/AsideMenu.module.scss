@@ -1,0 +1,13 @@
+.container {
+  max-height: 100vh;
+  margin-top: 40px;
+  width: var(--pixema-aside-menu-width);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+
+  svg {
+    width: var(--pixema-aside-menu-width);
+  }
+}

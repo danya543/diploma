@@ -1,0 +1,13 @@
+.container {
+  max-width: 600px;
+  width: 400px;
+  border: 1px solid var();
+
+  & > *:not(:last-child) {
+    margin-bottom: 40px;
+  }
+
+  button {
+    border-radius: 10px;
+  }
+}

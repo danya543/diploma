@@ -1,0 +1,38 @@
+.container {
+  width: 300px;
+
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  transition: transform 300ms ease-in-out;
+  border: 0;
+  overflow: auto;
+
+  a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding: 20px 32px;
+    color: var(--tms-text-color);
+
+    &.active {
+      color: var(--pixema-primary-color);
+    }
+  }
+
+  div:first-child {
+    flex: 1;
+  }
+
+  div:last-child button {
+    width: 100%;
+  }
+
+  &[data-open='true'] {
+    transform: translateX(0);
+  }
+
+  .themeSwitcher {
+    display: flex;
+  }
+}

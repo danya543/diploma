@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+  select {
+    width: 100%;
+    background-color: var(--pixema-background-theme-color);
+    border: 0;
+    color: var(--pixema-text-color);
+    padding: 0 20px;
+    cursor: pointer;
+  }
+}

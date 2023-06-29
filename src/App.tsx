@@ -1,5 +1,7 @@
-import './App.styles.css';
+import './App.styles.scss';
+
+import { AppRouter } from './router/AppRouter';
 
 export const App = () => {
-  return <h1>Getting started</h1>;
+  return <AppRouter />;
 };

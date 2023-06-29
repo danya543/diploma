@@ -1,0 +1,23 @@
+.container {
+  --pixema-max-content-width: 100vw;
+
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+
+  main {
+    flex: 1;
+    max-width: var(--pixema-max-content-width);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  footer {
+    width: 100%;
+    max-width: var(--pixema-max-content-width);
+    margin: auto;
+  }
+}
