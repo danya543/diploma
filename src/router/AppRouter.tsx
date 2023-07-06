@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import { MainLayout } from '~/layouts/MainLayout/MainLayout';
 import { SignLayout } from '~/layouts/SignLayout/SignLayout';
+import { FilmPage } from '~/pages/FilmPage/FilmPage';
 import { MainPage } from '~/pages/Main/MainPage';
 import { SignInPage } from '~/pages/SignIn/SignIn';
 
@@ -39,6 +40,10 @@ const routerSchema = createBrowserRouter([
       {
         path: 'settings',
         element: <div>Settings</div>
+      },
+      {
+        path: 'titles/:id',
+        element: <FilmPage />
       }
     ]
   },

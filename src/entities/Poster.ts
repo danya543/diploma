@@ -1,28 +1,44 @@
-/* eslint-disable @typescript-eslint/naming-convention -- API CONSTANTS*/
+export interface Actor {
+  id: number;
+  name: string;
+  poster: string;
+  pivot: {
+    department: string;
+  };
+}
+
+export interface Genre {
+  display_name: string;
+  id: number;
+}
+
+export interface Image {
+  url: string;
+}
+
+export interface Video {
+  name: string;
+  url: string;
+}
+
 export interface Poster {
   id: 1;
   name: string;
   release_date: string;
-  year: string;
+  description: string;
   tagline: string;
   poster: string;
   backdrop: string;
   runtime: number;
   budget: number;
   revenue: number;
-  popularity: number;
-  tmdb_id: number;
-  imdb_id: string;
-  is_series: boolean;
-  adult: boolean;
-  season_count: number;
-  episode_count: number;
-  series_ended: boolean;
   language: string;
-  original_title: string;
   certification: string;
   rating: string;
   vote_count: number;
+  credits: Actor[];
+  genres: Genre[];
+  genre: string;
+  images: Image[];
+  videos: Video[];
 }
-
-/* eslint-enable @typescript-eslint/naming-convention*/

@@ -21,13 +21,12 @@
 }
 
 .icon {
-  height: 16px;
-  width: 16px;
+  height: 24px;
+  width: 24px;
   display: flex;
   align-items: center;
 
   > svg {
-    fill: currentColor;
     stroke: currentColor;
     height: 100%;
     width: 100%;
@@ -51,7 +50,7 @@
   color: var(--pixema-text-color);
 
   &:hover:not(:disabled) {
-    background-color: var(--pixema-background-medium-color);
+    color: var(--pixema-secondary-color);
   }
 }
 

@@ -1,7 +1,7 @@
 nav {
   margin: 40px 0;
   height: 56px;
-  width: calc(100vw - var(--pixema-aside-menu-width) - 40px);
+  width: 100%;
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 40px;

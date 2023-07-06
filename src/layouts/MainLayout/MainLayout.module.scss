@@ -8,11 +8,14 @@
 
   main {
     flex: 1;
-    max-width: var(--pixema-max-content-width);
-    width: 100%;
+    width: var(--pixema-max-content-width);
+
     display: flex;
     flex-direction: row;
     gap: 40px;
+    section {
+      width: 70%;
+    }
   }
 
   footer {

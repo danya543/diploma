@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { fetchPosters } from '~/api/fetchPosters';
 import { type Poster } from '~/entities/Poster';
-import { PostCard } from '~/features/PosterCard/PosterCard';
+import { PosterCard } from '~/features/PosterCard/PosterCard';
 
 import pageStyles from './MainPage.module.scss';
 
@@ -18,7 +18,7 @@ export const MainPage = () => {
   return (
     <div className={pageStyles.container}>
       {posts.map((post) => (
-        <PostCard
+        <PosterCard
           key={post.id}
           post={post}
         />

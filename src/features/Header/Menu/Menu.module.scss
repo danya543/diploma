@@ -1,6 +1,5 @@
 .container {
-  width: 300px;
-
+  width: 100%;
   background-color: transparent;
   display: flex;
   flex-direction: column;
@@ -13,7 +12,7 @@
     text-align: center;
     text-decoration: none;
     padding: 20px 32px;
-    color: var(--tms-text-color);
+    color: var(--pixema-text-color);
 
     &.active {
       color: var(--pixema-primary-color);
