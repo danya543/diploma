@@ -8,6 +8,10 @@
   gap: 40px;
 
   svg {
-    width: var(--pixema-aside-menu-width);
+    path:nth-child(4),
+    path:nth-child(5),
+    path:nth-child(6) {
+      fill: var(--pixema-logo-color);
+    }
   }
 }

@@ -38,11 +38,9 @@ export const SignInForm = () => {
         shouldFitContainer
       />
       <Button
+        text={'Sign in'}
         type="submit"
-        shouldFitContainer
-      >
-        Sign in
-      </Button>
+      ></Button>
     </form>
   );
 };

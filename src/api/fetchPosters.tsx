@@ -14,12 +14,21 @@ interface PosterResponse {
   };
 }
 
-export async function fetchPosters(): Promise<PosterResponse> {
+const postersPerPage = 12;
+
+export async function fetchPosters({
+  page
+}: {
+  page: number;
+}): Promise<PosterResponse> {
   const headers = new Headers();
   headers.append('Authorization', `Bearer ${token}`);
-  const response = await fetch(`${BASE_API_URL}/titles`, {
-    headers
-  });
+  const response = await fetch(
+    `${BASE_API_URL}/titles?perPage=${postersPerPage}&page=${page}`,
+    {
+      headers
+    }
+  );
 
   if (response.status == 200) {
     const data = (await response.json()) as PosterResponse;

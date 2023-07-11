@@ -8,14 +8,39 @@
   overflow: auto;
 
   a {
-    display: block;
-    text-align: center;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
     text-decoration: none;
     padding: 20px 32px;
-    color: var(--pixema-text-color);
+    color: var(--pixema-disabled-bgcolor);
+
+    svg {
+      path {
+        fill: var(--pixema-disabled-bgcolor);
+      }
+    }
 
     &.active {
-      color: var(--pixema-primary-color);
+      color: var(--pixema-primary-bgcolor);
+
+      svg {
+        path {
+          fill: var(--pixema-primary-bgcolor);
+        }
+      }
+    }
+
+    &:hover:not(:disabled) {
+      color: var(--pixema-primary-hover-bgcolor);
+
+      svg {
+        path {
+          fill: var(--pixema-primary-hover-bgcolor);
+        }
+      }
     }
   }
 

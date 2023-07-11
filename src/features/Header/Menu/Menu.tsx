@@ -1,6 +1,5 @@
 import { NavLink } from 'react-router-dom';
 
-//import { ThemeSwitcher } from '~/features/Header/Menu/ThemeSwitcher';
 import { NavLinks } from '~/features/Header/header.constants';
 //import { ButtonAppearance } from '~/shared/ui/Button/Button.types';
 //import { Button } from '~/shared/ui/Button/Button';
@@ -20,21 +19,11 @@ export const Menu = ({ isOpen }: { isOpen?: boolean }) => {
             to={link.path}
             className={({ isActive }) => (isActive ? menuStyles.active : '')}
           >
+            <link.icon />
             {link.title}
           </NavLink>
         ))}
       </div>
-      {/* <div>
-        <ThemeSwitcher />
-        {user && (
-          <Button
-            appearance={ButtonAppearance.Secondary}
-            onClick={onLogout}
-          >
-            Log Out
-          </Button>
-        )}
-      </div> */}
     </div>
   );
 };

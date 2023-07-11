@@ -1,0 +1,60 @@
+.container {
+  display: flex;
+  flex-flow: column;
+  color: var(--text-color);
+  margin-right: 31%;
+
+  h2 {
+    font-size: 24px;
+    line-height: calc(36px / 24px) * 100%;
+    margin: 0;
+    padding-bottom: 16px;
+  }
+
+  .themeContainer {
+    display: flex;
+    justify-content: space-between;
+    background: var(--pixema-sign-backgroung-color);
+    padding: 24px 40px;
+    align-items: center;
+    border-radius: 10px;
+    width: 100%;
+
+    .theme {
+      display: flex;
+      flex-flow: column;
+      gap: 4px;
+      font-size: 16px;
+      line-height: calc(24px / 16px) * 100%;
+      font-weight: 500;
+
+      span:nth-child(2) {
+        color: var(--pixema-sign-backgroung-color);
+      }
+    }
+
+    .switcher {
+      button {
+        width: 100%;
+        padding: 0;
+
+        div {
+          width: 35px;
+          background: var(--pixema-sign-backgroung-color);
+
+          svg {
+            &:hover path:first-child {
+              fill: var(--pixema-primary-hover-bgcolor);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin-right: 0;
+  }
+}

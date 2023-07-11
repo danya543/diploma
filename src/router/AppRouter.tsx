@@ -4,6 +4,7 @@ import { MainLayout } from '~/layouts/MainLayout/MainLayout';
 import { SignLayout } from '~/layouts/SignLayout/SignLayout';
 import { FilmPage } from '~/pages/FilmPage/FilmPage';
 import { MainPage } from '~/pages/Main/MainPage';
+import { SettingsPage } from '~/pages/SettingsPage/SettingsPage';
 import { SignInPage } from '~/pages/SignIn/SignIn';
 
 const routerSchema = createBrowserRouter([
@@ -34,12 +35,12 @@ const routerSchema = createBrowserRouter([
         element: <div>Trends</div>
       },
       {
-        path: 'favorites',
-        element: <div>Favorites</div>
+        path: 'favorities',
+        element: <div>Favorities</div>
       },
       {
         path: 'settings',
-        element: <div>Settings</div>
+        element: <SettingsPage />
       },
       {
         path: 'titles/:id',

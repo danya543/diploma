@@ -3,7 +3,12 @@ import { type ButtonHTMLAttributes, type ReactElement } from 'react';
 export const ButtonAppearance = {
   Primary: 'primary',
   Secondary: 'secondary',
-  Secondary2: 'secondary2'
+  Switcher: 'switcher_btn',
+  user: 'user',
+  chevron: 'chevron',
+  burger: 'burger',
+  pagination: 'pagination',
+  system: 'system'
 } as const;
 
 export type ButtonAppearances =

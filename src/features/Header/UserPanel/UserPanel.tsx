@@ -20,6 +20,7 @@ export const UserPanel = () => {
         disabled
       >
         <option value="">Sign In</option>
+        <option value="">Sign Up</option>
       </select>
     </div>
   );
