@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+import { useNavigate } from 'react-router-dom';
+
 import { fetchPosters } from '~/api/fetchPosters';
 import { type Poster } from '~/entities/Poster';
 import { PosterCard } from '~/features/PosterCard/PosterCard';
@@ -11,14 +13,21 @@ export const MainPage = () => {
   const [posts, setPosts] = useState<Poster[]>([]);
   const [pageNumber, setPageNumber] = useState<number>(0);
   const [page, setPage] = useState<number>(1);
-
+  const navigate = useNavigate();
+  const redirect = () => {
+    navigate('/sign/in');
+    alert('You cannot view content without authorization');
+  };
   useEffect(() => {
-    fetchPosters({ page: page })
-      .then((data) => {
-        setPosts(data.pagination.data);
-        setPageNumber(data.pagination.last_page);
-      })
-      .catch((error) => console.error(error));
+    const accessToken = localStorage.getItem('@pixema/access-token');
+    accessToken
+      ? fetchPosters({ page: page, accessToken: accessToken })
+          .then((data) => {
+            setPosts(data.pagination.data);
+            setPageNumber(data.pagination.last_page);
+          })
+          .catch((error) => console.error(error))
+      : redirect();
   }, [page]);
 
   return (

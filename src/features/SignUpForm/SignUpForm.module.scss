@@ -1,0 +1,14 @@
+.container {
+  margin: auto;
+  width: 100%;
+  border: 1px solid var(--tms-background-medium-color);
+
+  button {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  & > *:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}

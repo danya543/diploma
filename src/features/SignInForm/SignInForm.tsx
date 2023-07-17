@@ -1,22 +1,33 @@
 import { useState } from 'react';
 
-//import { useUserContext } from '~/contexts/UserContext/userContext';
+import { useNavigate } from 'react-router-dom';
+
 import { Button } from '~/shared/ui/Button/Button';
 import { InputField } from '~/shared/ui/InputField/InputField';
+import { useAppDispatch } from '~/store/store.types';
 
 import formStyles from './SignInForm.module.scss';
+import { createTokens } from '../states/userSlice/user.api';
 
 export const SignInForm = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  //const { login, user } = useUserContext();
+  const tokenName = 'iphone';
+  const [isLoading, setIsLoading] = useState(false);
+  const dispatch = useAppDispatch();
 
   return (
     <form
       className={formStyles.container}
       onSubmit={(event) => {
         event.preventDefault();
-        //login({ email, password }).catch((error) => console.error(error));
+        dispatch(createTokens({ email, password, token_name: tokenName }))
+          .then(() => {
+            setIsLoading(true);
+            navigate('/');
+          })
+          .catch(() => setIsLoading(false));
       }}
     >
       <InputField
@@ -40,7 +51,8 @@ export const SignInForm = () => {
       <Button
         text={'Sign in'}
         type="submit"
-      ></Button>
+        disabled={isLoading || email.length === 0 || password.length === 0}
+      />
     </form>
   );
 };

@@ -1,4 +1,4 @@
-import { BASE_API_URL, token } from '~/api/constants';
+import { BASE_API_URL } from '~/api/constants';
 import { type Poster } from '~/entities/Poster';
 
 interface PosterResponse {
@@ -17,12 +17,15 @@ interface PosterResponse {
 const postersPerPage = 12;
 
 export async function fetchPosters({
-  page
+  page,
+  accessToken
 }: {
   page: number;
+  accessToken: string;
 }): Promise<PosterResponse> {
   const headers = new Headers();
-  headers.append('Authorization', `Bearer ${token}`);
+  headers.append('Authorization', `Bearer ${accessToken}`);
+
   const response = await fetch(
     `${BASE_API_URL}/titles?perPage=${postersPerPage}&page=${page}`,
     {
@@ -35,6 +38,7 @@ export async function fetchPosters({
 
     return data;
   }
+
   throw new Error(
     `Request failed: ${response.status} (${response.statusText})`
   );

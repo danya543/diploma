@@ -6,6 +6,7 @@ import { FilmPage } from '~/pages/FilmPage/FilmPage';
 import { MainPage } from '~/pages/Main/MainPage';
 import { SettingsPage } from '~/pages/SettingsPage/SettingsPage';
 import { SignInPage } from '~/pages/SignIn/SignIn';
+import { SignUpPage } from '~/pages/SignUp/SignUp';
 
 const routerSchema = createBrowserRouter([
   {
@@ -18,7 +19,7 @@ const routerSchema = createBrowserRouter([
       },
       {
         path: 'up',
-        element: <div>Sign up</div> //<SignUpPage />
+        element: <SignUpPage />
       }
     ]
   },

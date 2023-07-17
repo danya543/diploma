@@ -1,15 +1,14 @@
 .container {
-  max-width: 600px;
-  width: 400px;
+  width: 100%;
   border: 1px solid transparent;
 
   & > *:not(:last-child) {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
 
   button {
     border-radius: 10px;
-    width: fit-content;
+    width: 100%;
     margin: 0 auto;
   }
 }

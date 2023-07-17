@@ -6,3 +6,7 @@ export interface User {
   last_name: string;
   gender: string;
 }
+
+export interface JWTToken {
+  user: { access_token: string };
+}
