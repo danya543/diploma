@@ -1,15 +1,15 @@
 import { useState } from 'react';
 
+import { Link } from 'react-router-dom';
+
 import { fetchSearch } from '~/api/fetchSearch';
 import { ReactComponent as FilterIcon } from '~/assets/icons/Filter.svg';
-//import { type Poster } from '~/entities/Poster';
 import { Button } from '~/shared/ui/Button/Button';
 
 import searchBarStyles from './SearchBar.module.scss';
 
 export const SearchBar = () => {
   const [search, setSearch] = useState('');
-  //const [results, setResults] = useState<Poster[]>([]);
   return (
     <form
       className={searchBarStyles.container}
@@ -29,6 +29,9 @@ export const SearchBar = () => {
         value={search}
         onChange={({ target: { value } }) => setSearch(value)}
       />
+      <Link to={`/searchResult/${search}`}>
+        <Button onClick={() => setSearch('')} />
+      </Link>
       <Button
         iconLeft={<FilterIcon />}
         type="submit"

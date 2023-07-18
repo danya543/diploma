@@ -2,10 +2,12 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import { MainLayout } from '~/layouts/MainLayout/MainLayout';
 import { SignLayout } from '~/layouts/SignLayout/SignLayout';
+import { Error404 } from '~/pages/ErrorPage/ErrorPage';
 import { FavoritiesPage } from '~/pages/FavoritPage/FavoritPage';
 import { FilmPage } from '~/pages/FilmPage/FilmPage';
 import { MainPage } from '~/pages/Main/MainPage';
 import { NewsPage } from '~/pages/NewsPage/NewsPage';
+import { SearchPage } from '~/pages/SearchPage/SearchPage';
 import { SettingsPage } from '~/pages/SettingsPage/SettingsPage';
 import { SignInPage } from '~/pages/SignIn/SignIn';
 import { SignUpPage } from '~/pages/SignUp/SignUp';
@@ -35,7 +37,7 @@ const routerSchema = createBrowserRouter([
         element: <MainPage />
       },
       {
-        path: 'trends',
+        path: 'news',
         element: <TrendsPage />
       },
       {
@@ -45,6 +47,10 @@ const routerSchema = createBrowserRouter([
       {
         path: 'settings',
         element: <SettingsPage />
+      },
+      {
+        path: '/searchResult/:query',
+        element: <SearchPage />
       },
       {
         path: 'titles/:id',
@@ -58,7 +64,7 @@ const routerSchema = createBrowserRouter([
   },
   {
     path: '*',
-    element: <div>Not found</div>
+    element: <Error404 />
   }
 ]);
 

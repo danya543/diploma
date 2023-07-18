@@ -25,7 +25,10 @@ export const Header = () => {
           onClick={toggleMenu}
           iconLeft={isOpenMenu ? <Cancel /> : <Burger />}
         />
-        <Menu isOpen={isOpenMenu} />
+        <Menu
+          isOpen={isOpenMenu}
+          reOpen={toggleMenu}
+        />
       </div>
     </nav>
   );

@@ -10,8 +10,8 @@ export const NavLinks = [
     icon: Home
   },
   {
-    path: '/trends',
-    title: 'Trends',
+    path: '/news',
+    title: 'News',
     icon: Trends
   },
   {

@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import { fetchTrend } from '~/api/fetchTrend';
 import { type ArticleResponse } from '~/api/fetchTrend';
 import { ReactComponent as LeftArrow } from '~/assets/icons/IconChevronLeftPag.svg';
+import { Loader } from '~/features/Loader/Loader';
 import { Button } from '~/shared/ui/Button/Button';
 
 import newsStyles from './NewsPage.module.scss';
@@ -39,6 +40,6 @@ export const NewsPage = () => {
       </div>
     </div>
   ) : (
-    <div>Loading...</div>
+    <Loader />
   );
 };

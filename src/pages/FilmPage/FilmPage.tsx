@@ -8,6 +8,7 @@ import { fetchPoster, type PosterResponse } from '~/api/fetchPoster';
 import { ReactComponent as Bookmark } from '~/assets/icons/Favorites.svg';
 import { ReactComponent as LeftArrow } from '~/assets/icons/IconChevronLeftPag.svg';
 import { ReactComponent as Share } from '~/assets/icons/Share.svg';
+import { Loader } from '~/features/Loader/Loader';
 import { Button } from '~/shared/ui/Button/Button';
 
 import filmStyles from './FilmPage.module.scss';
@@ -106,6 +107,6 @@ export const FilmPage = () => {
       </div>
     </div>
   ) : (
-    <div>Loading...</div>
+    <Loader />
   );
 };

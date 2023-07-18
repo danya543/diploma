@@ -5,7 +5,13 @@ import { NavLinks } from '~/features/Header/header.constants';
 
 import menuStyles from './Menu.module.scss';
 
-export const Menu = ({ isOpen }: { isOpen?: boolean }) => {
+export const Menu = ({
+  isOpen,
+  reOpen
+}: {
+  isOpen?: boolean;
+  reOpen?: () => void;
+}) => {
   return (
     <div
       className={menuStyles.container}
@@ -16,7 +22,8 @@ export const Menu = ({ isOpen }: { isOpen?: boolean }) => {
           <NavLink
             key={link.path}
             to={link.path}
-            //className={({ isActive }) => (isActive ? menuStyles.active : '')}
+            onClick={reOpen}
+            className={({ isActive }) => (isActive ? menuStyles.active : '')}
           >
             <link.icon />
             {link.title}

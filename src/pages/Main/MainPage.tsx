@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { fetchPosters } from '~/api/fetchPosters';
 import { type Poster } from '~/entities/Poster';
+import { Loader } from '~/features/Loader/Loader';
 import { PosterCard } from '~/features/PosterCard/PosterCard';
 import { Pagination } from '~/shared/ui/Pagintion/Pagination';
 
@@ -30,7 +31,9 @@ export const MainPage = () => {
       : redirect();
   }, [page]);
 
-  return (
+  return posts.length === 0 ? (
+    <Loader />
+  ) : (
     <>
       <div className={pageStyles.container}>
         {posts.map((post) => (

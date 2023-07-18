@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { fetchTrends } from '~/api/fetchTrends';
 import type { Poster } from '~/entities/Poster';
+import { Loader } from '~/features/Loader/Loader';
 import { PosterCard } from '~/features/PosterCard/PosterCard';
 import { Pagination } from '~/shared/ui/Pagintion/Pagination';
 
@@ -28,7 +29,9 @@ export const TrendsPage = () => {
           .catch((error) => console.error(error))
       : redirect();
   }, [page]);
-  return (
+  return posts.length === 0 ? (
+    <Loader />
+  ) : (
     <>
       <div className={trendStyle.container}>
         {posts.map((post) => (

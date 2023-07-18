@@ -3,6 +3,14 @@
   grid-template-columns: 1fr auto;
   height: 56px;
 
+  a {
+    display: none;
+
+    button {
+      width: 0;
+    }
+  }
+
   input {
     width: 100%;
     border: none;
