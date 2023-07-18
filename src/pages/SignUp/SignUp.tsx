@@ -18,9 +18,8 @@ export const SignUpPage = () => {
     <div className={signUpStyles.container}>
       {createdUser ? (
         <>
-          <h2>Registration Confirmation</h2>
-          <p>{`Please activate your account with the activation
-link in the email. Please, check your email`}</p>
+          <h2>You are registered</h2>
+          <p>{`Now you can use our service`}</p>
           <Button
             text={'Home'}
             onClick={() => navigate('/')}

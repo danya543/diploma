@@ -41,4 +41,6 @@ export interface Poster {
   genre: string;
   images: Image[];
   videos: Video[];
+  meta: { image: string };
+  title: string;
 }

@@ -1,27 +1,32 @@
-//import { useState } from 'react';
+import { useState } from 'react';
 
-//import { useUserContext } from '~/contexts/UserContext/userContext';
+import { ReactComponent as Cancel } from '~/assets/icons/Burger-Cancel.svg';
+import { ReactComponent as Burger } from '~/assets/icons/burger.svg';
 import { SearchBar } from '~/features/Header/SearchBar/SearchBar';
 import { UserPanel } from '~/features/Header/UserPanel/UserPanel';
+import { Button } from '~/shared/ui/Button/Button';
 
 import headerStyles from './Header.module.scss';
+import { Menu } from './Menu/Menu';
 
 export const Header = () => {
-  //const [isOpen, setIsOpen] = useState(false);
-  //const { user, logout } = useUserContext();
+  const [isOpenMenu, setIsOpenMenu] = useState(false);
 
-  /* const toggleMenu = () => {
-    setIsOpen((hasBeenOpened) => !hasBeenOpened);
-  }; */
+  const toggleMenu = () => {
+    setIsOpenMenu((hasBeenOpened) => !hasBeenOpened);
+  };
 
   return (
     <nav className={headerStyles.container}>
       <SearchBar />
       <UserPanel />
-      {/* <MenuButton
-        onClick={toggleMenu}
-        isOpen={isOpen}
-      /> */}
+      <div className={headerStyles.menu}>
+        <Button
+          onClick={toggleMenu}
+          iconLeft={isOpenMenu ? <Cancel /> : <Burger />}
+        />
+        <Menu isOpen={isOpenMenu} />
+      </div>
     </nav>
   );
 };

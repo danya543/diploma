@@ -2,14 +2,13 @@ import { useEffect, useState } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 
-import { fetchPosters } from '~/api/fetchPosters';
-import { type Poster } from '~/entities/Poster';
+import { fetchTrends } from '~/api/fetchTrends';
+import type { Poster } from '~/entities/Poster';
 import { PosterCard } from '~/features/PosterCard/PosterCard';
 import { Pagination } from '~/shared/ui/Pagintion/Pagination';
 
-import pageStyles from './MainPage.module.scss';
-
-export const MainPage = () => {
+import trendStyle from './TrendsPage.module.scss';
+export const TrendsPage = () => {
   const [posts, setPosts] = useState<Poster[]>([]);
   const [pageNumber, setPageNumber] = useState<number>(0);
   const [page, setPage] = useState<number>(1);
@@ -21,7 +20,7 @@ export const MainPage = () => {
   useEffect(() => {
     const accessToken = localStorage.getItem('@pixema/access-token');
     accessToken
-      ? fetchPosters({ page: page, accessToken: accessToken })
+      ? fetchTrends({ page: page, accessToken: accessToken })
           .then((data) => {
             setPosts(data.pagination.data);
             setPageNumber(data.pagination.last_page);
@@ -29,19 +28,18 @@ export const MainPage = () => {
           .catch((error) => console.error(error))
       : redirect();
   }, [page]);
-
   return (
     <>
-      <div className={pageStyles.container}>
+      <div className={trendStyle.container}>
         {posts.map((post) => (
           <PosterCard
             key={post.id}
             post={post}
-            chapter="titles"
+            chapter="news"
           />
         ))}
       </div>
-      <div className={pageStyles.pagination}>
+      <div className={trendStyle.pagination}>
         <Pagination
           page={page}
           setPage={setPage}

@@ -15,11 +15,12 @@
     height: 100vh;
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 
     section {
+      margin-top: 50px;
       background-color: var(--pixema-sign-backgroung-color);
       display: flex;
       flex-direction: column;
@@ -32,6 +33,12 @@
       div {
         width: 100%;
       }
+    }
+
+    footer {
+      color: var(--pixema-logo-color);
+      justify-content: center;
+      align-items: flex-end;
     }
   }
 }

@@ -14,7 +14,7 @@ interface PosterResponse {
   };
 }
 
-export async function fetchPosters({
+export async function fetchTrends({
   page,
   accessToken
 }: {
@@ -25,7 +25,7 @@ export async function fetchPosters({
   headers.append('Authorization', `Bearer ${accessToken}`);
 
   const response = await fetch(
-    `${BASE_API_URL}/titles?perPage=${postersPerPage}&page=${page}`,
+    `${BASE_API_URL}/news?perPage=${postersPerPage}&page=${page}`,
     {
       headers
     }
@@ -33,7 +33,6 @@ export async function fetchPosters({
 
   if (response.status == 200) {
     const data = (await response.json()) as PosterResponse;
-
     return data;
   }
 

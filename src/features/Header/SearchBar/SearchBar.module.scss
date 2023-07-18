@@ -1,8 +1,10 @@
 .container {
   display: grid;
   grid-template-columns: 1fr auto;
+  height: 56px;
 
   input {
+    width: 100%;
     border: none;
     border-radius: 10px 0 0 10px;
     background-color: var(--pixema-secondary-bgcolor);
@@ -18,5 +20,11 @@
 
   button {
     border-radius: 0 10px 10px 0;
+
+    svg {
+      path {
+        fill: var(--pixema-logo-color);
+      }
+    }
   }
 }

@@ -1,0 +1,64 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .info {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+
+    img {
+      max-height: 430px;
+      border-radius: 10px;
+    }
+
+    .main {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+    }
+  }
+
+  button {
+    width: 10%;
+    min-width: 85px;
+    height: 30px;
+
+    svg {
+      width: 15px;
+
+      path {
+        fill: var(--pixema-logo-color);
+      }
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .container {
+    .info {
+      img {
+        width: 250px;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    .info {
+      flex-direction: column;
+      gap: 10px;
+
+      img {
+        width: 100%;
+        max-height: 550px;
+      }
+
+      .main {
+        gap: 30px;
+      }
+    }
+  }
+}

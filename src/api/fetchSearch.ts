@@ -1,9 +1,10 @@
-import { BASE_API_URL, postersPerPage } from '~/api/constants';
 import { type Poster } from '~/entities/Poster';
+
+import { BASE_API_URL, postersPerPage } from './constants';
 
 interface PosterResponse {
   status: string;
-  pagination: {
+  results: {
     current_page: number;
     from: number;
     to: number;
@@ -14,21 +15,17 @@ interface PosterResponse {
   };
 }
 
-export async function fetchPosters({
-  page,
-  accessToken
+export async function fetchSearch({
+  query
 }: {
-  page: number;
-  accessToken: string;
+  query: string;
 }): Promise<PosterResponse> {
+  const accessToken = localStorage.getItem('@pixema/access-token');
   const headers = new Headers();
-  headers.append('Authorization', `Bearer ${accessToken}`);
-
+  accessToken && headers.append('Authorization', `Bearer ${accessToken}`);
   const response = await fetch(
-    `${BASE_API_URL}/titles?perPage=${postersPerPage}&page=${page}`,
-    {
-      headers
-    }
+    `${BASE_API_URL}/search/${query}?limit=${postersPerPage}`,
+    { headers }
   );
 
   if (response.status == 200) {

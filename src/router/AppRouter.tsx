@@ -2,11 +2,14 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import { MainLayout } from '~/layouts/MainLayout/MainLayout';
 import { SignLayout } from '~/layouts/SignLayout/SignLayout';
+import { FavoritiesPage } from '~/pages/FavoritPage/FavoritPage';
 import { FilmPage } from '~/pages/FilmPage/FilmPage';
 import { MainPage } from '~/pages/Main/MainPage';
+import { NewsPage } from '~/pages/NewsPage/NewsPage';
 import { SettingsPage } from '~/pages/SettingsPage/SettingsPage';
 import { SignInPage } from '~/pages/SignIn/SignIn';
 import { SignUpPage } from '~/pages/SignUp/SignUp';
+import { TrendsPage } from '~/pages/TrendsPage/TrendsPage';
 
 const routerSchema = createBrowserRouter([
   {
@@ -33,11 +36,11 @@ const routerSchema = createBrowserRouter([
       },
       {
         path: 'trends',
-        element: <div>Trends</div>
+        element: <TrendsPage />
       },
       {
         path: 'favorities',
-        element: <div>Favorities</div>
+        element: <FavoritiesPage />
       },
       {
         path: 'settings',
@@ -46,6 +49,10 @@ const routerSchema = createBrowserRouter([
       {
         path: 'titles/:id',
         element: <FilmPage />
+      },
+      {
+        path: 'news/:id',
+        element: <NewsPage />
       }
     ]
   },

@@ -5,11 +5,18 @@ import { type Poster } from '~/entities/Poster';
 
 import postStyles from './PosterCard.module.scss';
 
-export const PosterCard = ({ post }: { post: Poster }) => {
+export const PosterCard = ({
+  post,
+  chapter
+}: {
+  post: Poster;
+  chapter: string;
+}) => {
   const rating = Number.parseInt(post.rating);
+
   return (
     <div className={postStyles.container}>
-      <img src={post.poster} />
+      <img src={(post.poster && post.poster) || post.meta.image} />
       <span
         className={classNames({
           [postStyles.rating]: true,
@@ -21,7 +28,9 @@ export const PosterCard = ({ post }: { post: Poster }) => {
         {post.rating}
       </span>
       <h3>
-        <Link to={`/titles/${post.id}`}>{post.name}</Link>
+        <Link to={`/${chapter}/${post.id}`}>
+          {(post.name && post.name) || post.title}
+        </Link>
       </h3>
     </div>
   );
