@@ -1,3 +1,6 @@
+/* eslint-disable unicorn/prefer-query-selector  --- ктущтиу */
+/* eslint-disable @typescript-eslint/no-misused-promises  --- ктущтиу */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment  --- ктущтиу */
 import { useEffect, useState } from 'react';
 
 import classNames from 'classnames';
@@ -12,6 +15,7 @@ import { Loader } from '~/features/Loader/Loader';
 import { Button } from '~/shared/ui/Button/Button';
 
 import filmStyles from './FilmPage.module.scss';
+import { share, booked, LocalStorageKey } from '../constants/constants';
 
 export const FilmPage = () => {
   const [post, setPosts] = useState<PosterResponse | null>(null);
@@ -32,6 +36,11 @@ export const FilmPage = () => {
       (castomerString += (castomerString ? ', ' : '') + person.name)
   );
 
+  const savedPosts = localStorage.getItem(LocalStorageKey.book);
+  const favorities: string[] = savedPosts ? JSON.parse(savedPosts) : [];
+  const stringId = post?.title.id.toString() as string;
+  const isBooked = favorities.includes(stringId);
+
   return post ? (
     <div className={filmStyles.all}>
       <Button
@@ -42,18 +51,31 @@ export const FilmPage = () => {
         }}
       />
       <div className={filmStyles.container}>
-        <div className={filmStyles.poster}>
+        <div
+          className={classNames({
+            [filmStyles.poster]: true,
+            [filmStyles.booked]: isBooked
+          })}
+        >
           <img
             src={post?.title.poster}
             alt=""
           />
+
           <Button
             appearance="secondary"
             iconLeft={<Bookmark />}
+            onClick={() => {
+              booked(post.title.id.toString());
+              document
+                .getElementsByClassName(filmStyles.poster)[0]
+                .classList.toggle(filmStyles.booked);
+            }}
           />
           <Button
             appearance="secondary"
             iconLeft={<Share />}
+            onClick={share}
           />
         </div>
         <div className={filmStyles.information}>
@@ -110,3 +132,6 @@ export const FilmPage = () => {
     <Loader />
   );
 };
+/* eslint-enable @typescript-eslint/no-unsafe-assignment  --- ктущтиу */
+/* eslint-enable @typescript-eslint/no-misused-promises  --- ктущтиу */
+/* eslint-enable unicorn/prefer-query-selector  --- ктущтиу */

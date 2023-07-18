@@ -52,6 +52,18 @@
       }
     }
 
+    .booked {
+      button:nth-child(2) {
+        div {
+          svg {
+            path {
+              fill: var(--pixema-rating-good);
+            }
+          }
+        }
+      }
+    }
+
     .information {
       .header {
         display: flex;
