@@ -1,0 +1,33 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  button {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    border-radius: 10px;
+
+    div {
+      svg {
+        path {
+          fill: white;
+        }
+      }
+    }
+
+    &:hover:not(:disabled) {
+      div {
+        svg {
+          path {
+            fill: var(--pixema-secondary-color);
+          }
+        }
+      }
+    }
+  }
+}

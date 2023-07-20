@@ -1,0 +1,46 @@
+.container {
+  position: relative;
+  display: grid;
+  grid-template:
+    'image image image'
+    'title title title';
+
+  img {
+    grid-area: image;
+    height: 350px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  h3 {
+    grid-area: title;
+    margin-top: 10px;
+
+    a {
+      text-decoration: none;
+      color: var(--pixema-logo-color);
+    }
+  }
+
+  .rating {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+
+    padding: 0 5px;
+    border-radius: 5px;
+  }
+
+  .ratingBest {
+    background-color: var(--pixema-rating-best);
+  }
+
+  .ratingGood {
+    background-color: var(--pixema-rating-good);
+  }
+
+  .ratingWorst {
+    background-color: var(--pixema-rating-worst);
+  }
+}
