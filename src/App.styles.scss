@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-reboot@4.5.6/reboot.min.css');
+
+:root {
+  --pixema-primary-bgcolor: #7b61ff;
+  --pixema-primary-hover-bgcolor: #917cff;
+  --pixema-secondary-bgcolor: #323537;
+  --pixema-secondary-color: #afb2b6;
+  --pixema-disabled-bgcolor: #80858b;
+  --pixema-background-theme-color: #000000;
+  --pixema-sign-backgroung-color: #242426;
+  --pixema-navbar-height: 96px;
+  --pixema-aside-menu-width: 25%;
+
+  --pixema-text-color: white;
+  --pixema-logo-color: #ffffff;
+
+  --pixema-rating-best: #00a340;
+  --pixema-rating-good: #f3a608;
+  --pixema-rating-worst: #f45d2d;
+}
+
+:root.light {
+  --pixema-background-theme-color: #e5e5e5;
+  --pixema-secondary-bgcolor: #ffffff;
+  --pixema-sign-backgroung-color: #ffffff;
+  --pixema-text-color: #323537;
+  --pixema-logo-color: #000000;
+}
+
+body {
+  background-color: var(--pixema-background-theme-color);
+  font-family: 'Exo 2';
+  font-weight: 500;
+  color: var(--pixema-text-color);
+}

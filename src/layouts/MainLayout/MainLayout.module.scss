@@ -1,0 +1,31 @@
+.container {
+  --pixema-max-content-width: 100vw;
+
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+
+    section {
+      width: 70%;
+      position: relative;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    main {
+      section {
+        width: 100%;
+        padding: 0 20px;
+      }
+    }
+  }
+}

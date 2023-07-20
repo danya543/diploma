@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  color: var(--pixema-text-color);
+  margin-top: 20px;
+
+  span {
+    color: var(--pixema-primary-bgcolor);
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    padding: 0 5px;
+    border-radius: 15px;
+    background: var(--pixema-secondary-bgcolor);
+  }
+
+  svg path {
+    fill: currentColor;
+  }
+
+  button {
+    outline: none;
+  }
+}
